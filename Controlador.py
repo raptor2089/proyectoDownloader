@@ -1,4 +1,3 @@
-
 import platform
 import threading
 from io import BytesIO
@@ -172,9 +171,9 @@ class Controlador:
 			self.path = filedialog.askdirectory()
 			t = threading.Thread(target= self.__descargaAudio)
 			t.start()
-			self.button.config(state=DISABLED)
-			self.bvideo.config(state=DISABLED)
-			self.baudio.config(state=DISABLED)
+			self.vista.button.config(state=DISABLED)
+			self.vista.bvideo.config(state=DISABLED)
+			self.vista.baudio.config(state=DISABLED)
 			self.mostrarDialogo()
 			t = threading.Thread(target= self.__mostrarCargaAudio)
 			t.start()
@@ -201,14 +200,14 @@ class Controlador:
 
 			self.top.destroy()
 			self.vista.deiconify()
-			self.text.config(state=NORMAL)
-			self.text.delete(1.0,END)
-			self.text.config(state=DISABLED)
-			self.listbox.delete(0,END)
-			self.url.set("")
-			self.button.config(state=NORMAL)
-			self.bvideo.config(state=NORMAL)
-			self.baudio.config(state=NORMAL)
+			self.vista.text.config(state=NORMAL)
+			self.vista.text.delete(1.0,END)
+			self.vista.text.config(state=DISABLED)
+			self.vista.listbox.delete(0,END)
+			self.vista.url.set("")
+			self.vista.button.config(state=NORMAL)
+			self.vista.bvideo.config(state=NORMAL)
+			self.vista.baudio.config(state=NORMAL)
 
 	def mostrarDialogo(self):
 		self.top = Toplevel(self.vista)
